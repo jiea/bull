@@ -18,6 +18,7 @@ public class BullExceptionHandler {
 
     @ExceptionHandler(IllegalArgumentException.class)
     public Resp handleIllegalArgumentException(IllegalArgumentException e){
+        LOG.error(e.getMessage(), e);
         return Resp.error(1000, e.getMessage());
     }
 }
