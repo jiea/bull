@@ -13,12 +13,8 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public int add(User user) {
-        return userMapper.insertSelective(user);
-    }
-
-    @Override
-    public User get(int i) {
-        return userMapper.selectByPrimaryKey(Long.valueOf(i));
+    public User getByUsername(String username) {
+        User user = userMapper.getByUsername(username);
+        return user;
     }
 }
