@@ -21,35 +21,58 @@ public class JwtUtils {
      */
     private static final int expire = 30 * 60 * 1000;
 
-    public static String generateToken(Long userId){
+    /**
+     * 生成 jwt token
+     *
+     * @param userId
+     * @return
+     */
+    public static String generateToken(Long userId) {
         return Jwts.builder().setHeaderParam("alg", "HS384")
                 .setHeaderParam("tye", "JWT")
-                .setSubject(userId+"")
+                .setSubject(userId + "")
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + expire))
                 .signWith(SignatureAlgorithm.HS384, secret)
                 .compact();
     }
 
-    public static void validateToken(String jwt){
+    /**
+     * 校验 jwt token
+     *
+     * @param jwt
+     * @return 1: 成功, 2: 过期, 3: 错误
+     */
+    public static int validateToken(String jwt) {
         try {
             Claims claims = Jwts.parser()
                     .setSigningKey(secret)
                     .parseClaimsJws(jwt).getBody();
+            LOG.info("jwt-token-suject: {}", claims.getSubject());
+            return 1;
         } catch (ExpiredJwtException e) {
-            LOG.info("jwt: {}, jwt-token 过期", jwt);
+            LOG.info("jwt-token 过期, jwt: {}", jwt);
+            return 2;
         } catch (Exception e) {
-            LOG.info("jwt: {}, jwt-token 出错", jwt);
+            LOG.info("jwt-token 错误, jwt: {}", jwt);
+            return 3;
         }
     }
 
     public static void main(String[] args) {
         String jwt = "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiIxIiwiaWF0IjoxNTMyNTE4NDY2LCJleHAiOjE1MzI1MjAyNjZ9.MgJPiCaSLTRl2XErADkpxyofgGB6rNqRPNv8X5IPYXH1mqSDL2NBzgixl9lC-YS3";
-        Claims claims = Jwts.parser()
-                .setSigningKey(secret)
-                .parseClaimsJws(jwt).getBody();
+        try {
+            Claims claims = Jwts.parser()
+                    .setSigningKey(secret)
+                    .parseClaimsJws(jwt).getBody();
+            System.out.println(claims.getSubject());
+            System.out.println(claims.getExpiration());
+        } catch (ExpiredJwtException e) {
+            LOG.info("jwt: {}, jwt-token 过期", jwt);
+        } catch (Exception e) {
+            LOG.info("jwt: {}, jwt-token 出错", jwt);
+        }
 
-        System.out.println(claims.getSubject());
-        System.out.println(claims.getExpiration());
+
     }
 }

@@ -24,7 +24,7 @@ public class LoginController {
 
     @ResponseBody
     @PostMapping("login")
-    public Resp login(@RequestBody LoginReq loginReq){
+    public Resp login(@RequestBody LoginReq loginReq) {
 
         ValidationUtils.validate(loginReq);
 
@@ -35,5 +35,7 @@ public class LoginController {
 
         return Resp.ok("login success", token);
     }
+
+
 
 }
