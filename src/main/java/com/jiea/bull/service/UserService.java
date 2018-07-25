@@ -1,8 +1,9 @@
 package com.jiea.bull.service;
 
 import com.jiea.bull.domain.User;
+import com.jiea.bull.vo.LoginReq;
 
 public interface UserService {
 
-    User getByUsername(String username);
+    Long login(LoginReq loginReq);
 }

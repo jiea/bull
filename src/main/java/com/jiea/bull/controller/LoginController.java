@@ -1,5 +1,7 @@
 package com.jiea.bull.controller;
 
+import com.jiea.bull.common.utils.JwtUtils;
+import com.jiea.bull.common.utils.ValidationUtils;
 import com.jiea.bull.domain.User;
 import com.jiea.bull.service.UserService;
 import com.jiea.bull.vo.LoginReq;
@@ -8,10 +10,7 @@ import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Objects;
 
@@ -24,23 +23,17 @@ public class LoginController {
     private UserService userService;
 
     @ResponseBody
-    @RequestMapping("login")
+    @PostMapping("login")
     public Resp login(@RequestBody LoginReq loginReq){
 
+        ValidationUtils.validate(loginReq);
 
+        Long id = userService.login(loginReq);
 
-        User user = userService.getByUsername(loginReq.getUsername());
+        // 生成 token
+        String token = JwtUtils.generateToken(id);
 
-        if(Objects.isNull(user) || !user.getPassword().equals(new Sha256Hash(loginReq.getPassword(), user.getSalt()))){
-            return Resp.error("用户名或密码不正确");
-        }
-
-        if(user.getStatus() == 0){
-            return Resp.error("用户被禁用, 请联系管理员.");
-        }
-
-
-        return null;
+        return Resp.ok("login success", token);
     }
 
 }
