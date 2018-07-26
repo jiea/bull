@@ -21,4 +21,11 @@ public class BullExceptionHandler {
         LOG.error(e.getMessage(), e);
         return Resp.error(1000, e.getMessage());
     }
+
+    @ExceptionHandler(Exception.class)
+    public Resp handleException(Exception e){
+        LOG.error(e.getMessage(), e);
+        return Resp.error();
+    }
+
 }

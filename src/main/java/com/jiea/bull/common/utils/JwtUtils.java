@@ -1,5 +1,6 @@
 package com.jiea.bull.common.utils;
 
+import com.jiea.bull.common.exception.BullException;
 import io.jsonwebtoken.*;
 import org.apache.ibatis.logging.stdout.StdOutImpl;
 import org.slf4j.Logger;
@@ -56,6 +57,22 @@ public class JwtUtils {
         } catch (Exception e) {
             LOG.info("jwt-token 错误, jwt: {}", jwt);
             return 3;
+        }
+    }
+
+    public static Long getSubject(String jwt){
+        try {
+            Claims claims = Jwts.parser()
+                    .setSigningKey(secret)
+                    .parseClaimsJws(jwt).getBody();
+            LOG.info("jwt-token-subject: {}", claims.getSubject());
+            return Long.parseLong(claims.getSubject());
+        } catch (ExpiredJwtException e) {
+            LOG.info("jwt-token 过期, jwt: {}", jwt);
+            throw new BullException("token invalid");
+        } catch (Exception e) {
+            LOG.info("jwt-token 错误, jwt: {}", jwt);
+            throw new BullException("token error");
         }
     }
 
