@@ -39,5 +39,15 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
         return true;
     }
 
+    /**
+     * 获取 token
+     * @param request
+     * @return
+     */
+    private String getToken(HttpServletRequest request){
+        String token = request.getHeader("token");
+        return token;
+    }
+
 
 }

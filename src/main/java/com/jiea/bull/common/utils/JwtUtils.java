@@ -44,19 +44,13 @@ public class JwtUtils {
      * @param jwt
      * @return 1: 成功, 2: 过期, 3: 错误
      */
-    public static int validateToken(String jwt) {
+    public static void validateToken(String jwt) {
         try {
-            Claims claims = Jwts.parser()
-                    .setSigningKey(secret)
-                    .parseClaimsJws(jwt).getBody();
-            LOG.info("jwt-token-suject: {}", claims.getSubject());
-            return 1;
+            Jwts.parser().setSigningKey(secret).parseClaimsJws(jwt).getBody();
         } catch (ExpiredJwtException e) {
-            LOG.info("jwt-token 过期, jwt: {}", jwt);
-            return 2;
+            throw new BullException("token invalid");
         } catch (Exception e) {
-            LOG.info("jwt-token 错误, jwt: {}", jwt);
-            return 3;
+            throw new BullException("token error");
         }
     }
 
@@ -65,13 +59,10 @@ public class JwtUtils {
             Claims claims = Jwts.parser()
                     .setSigningKey(secret)
                     .parseClaimsJws(jwt).getBody();
-            LOG.info("jwt-token-subject: {}", claims.getSubject());
             return Long.parseLong(claims.getSubject());
         } catch (ExpiredJwtException e) {
-            LOG.info("jwt-token 过期, jwt: {}", jwt);
             throw new BullException("token invalid");
         } catch (Exception e) {
-            LOG.info("jwt-token 错误, jwt: {}", jwt);
             throw new BullException("token error");
         }
     }

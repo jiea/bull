@@ -1,5 +1,6 @@
 package com.jiea.bull.shiro;
 
+import com.jiea.bull.common.enums.UserStatusType;
 import com.jiea.bull.common.exception.BullException;
 import com.jiea.bull.common.utils.JwtUtils;
 import com.jiea.bull.domain.User;
@@ -44,15 +45,14 @@ public class ShiroRealm extends AuthorizingRealm {
      */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
-        String token = (String) authenticationToken.getPrincipal();
-
+        String token = (String) authenticationToken.getCredentials();
 
         Long userId = JwtUtils.getSubject(token);
 
         User user = userService.getById(userId);
 
-        if(Objects.isNull(user)){
-            throw new BullException("用户不存在");
+        if(Objects.isNull(user) && UserStatusType.DISABLE.getIndex() == user.getStatus()){
+            throw new BullException("用户被禁用");
         }
 
         return new SimpleAuthenticationInfo(user, token, getName());
