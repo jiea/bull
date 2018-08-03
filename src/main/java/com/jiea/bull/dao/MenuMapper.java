@@ -1,7 +1,11 @@
 package com.jiea.bull.dao;
 
 import com.jiea.bull.domain.Menu;
+import org.apache.ibatis.annotations.Mapper;
 
+import java.util.Set;
+
+@Mapper
 public interface MenuMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -14,4 +18,10 @@ public interface MenuMapper {
     int updateByPrimaryKeySelective(Menu record);
 
     int updateByPrimaryKey(Menu record);
+
+    Set<String> getPermsByUserId(Long userId);
+
+    Set<String> getAllPerms();
+
+    Set<String> getRolesByUserId(Long userId);
 }

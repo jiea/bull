@@ -41,23 +41,12 @@ public class ShiroConfig {
         return subjectDAO;
     }
 
-    @Bean("subjectFactory")
-    public SubjectFactory subjectFactory(){
-        DefaultSubjectFactory subjectFactory = new DefaultSubjectFactory();
-        DefaultSubjectContext subjectContext = new DefaultSubjectContext();
-        // 禁用session
-        subjectContext.setSessionCreationEnabled(false);
-        subjectFactory.createSubject(subjectContext);
-        return subjectFactory;
-    }
-
     @Bean("securityManager")
-    public SecurityManager securityManager(ShiroRealm shiroRealm, SessionManager sessionManager, SubjectDAO subjectDAO, SubjectFactory subjectFactory) {
+    public SecurityManager securityManager(ShiroRealm shiroRealm, SessionManager sessionManager, SubjectDAO subjectDAO) {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         securityManager.setSessionManager(sessionManager);
         securityManager.setRealm(shiroRealm);
         securityManager.setSubjectDAO(subjectDAO);
-        securityManager.setSubjectFactory(subjectFactory);
         return securityManager;
     }
 

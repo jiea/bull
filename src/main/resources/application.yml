@@ -13,4 +13,4 @@ mybatis:
 
 logging:
   level:
-    com.jiea.bull.dao : trace                                   # 输出 mybatis 日志
+    com.jiea.bull.dao : debug                                  # 输出 mybatis 日志

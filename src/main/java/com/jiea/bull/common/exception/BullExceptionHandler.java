@@ -1,6 +1,8 @@
 package com.jiea.bull.common.exception;
 
 import com.jiea.bull.vo.Resp;
+import org.apache.http.HttpStatus;
+import org.apache.shiro.authz.UnauthorizedException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -20,6 +22,10 @@ public class BullExceptionHandler {
     public Resp handleIllegalArgumentException(IllegalArgumentException e){
         LOG.error(e.getMessage(), e);
         return Resp.error(1000, e.getMessage());
+    }
+    @ExceptionHandler(UnauthorizedException.class)
+    public Resp handleUnauthorizedException(){
+        return Resp.error(HttpStatus.SC_UNAUTHORIZED, "没有访问权限");
     }
 
     @ExceptionHandler(Exception.class)
