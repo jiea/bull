@@ -36,6 +36,6 @@ public class DateConvertUtils {
     }
 
     public static void main(String[] args) {
-        System.out.println(toDate(LocalDate.now()));
+        System.out.println(toLocalDateTime(null));
     }
 }
