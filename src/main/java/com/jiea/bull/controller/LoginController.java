@@ -1,5 +1,6 @@
 package com.jiea.bull.controller;
 
+import com.jiea.bull.common.annotation.Log;
 import com.jiea.bull.common.utils.JwtUtils;
 import com.jiea.bull.common.utils.ValidationUtils;
 import com.jiea.bull.domain.User;
@@ -24,6 +25,7 @@ public class LoginController {
 
     @ResponseBody
     @PostMapping("login")
+    @Log("登录")
     public Resp login(@RequestBody LoginReq loginReq) {
 
         ValidationUtils.validate(loginReq);
