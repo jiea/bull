@@ -15,7 +15,7 @@ public class BubbleSort1 {
     private static void sort(int[] array) {
         int tmp;
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length - 1; j++) {
+            for (int j = 0; j < array.length - i - 1; j++) {
                 if (array[j] > array[j + 1]) {
                     tmp = array[j];
                     array[j] = array[j + 1];
@@ -97,7 +97,8 @@ public class BubbleSort1 {
 
     public static void main(String[] args) {
         int[] i = {9, 9, 2, 4, 5, 6, 7, 8};
-        sort2(i);
+        sort1(i);
         System.out.println(Arrays.toString(i));
+
     }
 }
