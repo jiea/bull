@@ -1,8 +1,10 @@
 package com.jiea.bull.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
+public class User implements Serializable {
+    private static final long serialVersionUID = 5103007913711498763L;
     private Long id;
 
     private String username;
