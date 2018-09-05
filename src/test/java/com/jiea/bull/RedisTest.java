@@ -1,17 +1,15 @@
 package com.jiea.bull;
 
 import com.jiea.bull.domain.User;
-import org.assertj.core.util.Lists;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.*;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {BullApplication.class})
@@ -63,11 +61,38 @@ public class RedisTest {
     @Test
     public void testSet(){
         SetOperations<String, String> setOperations = redisTemplate.opsForSet();
+        Long add1 = setOperations.add("set", "a", "b", "c");
+        System.out.println(add1);
+
+        Long size = setOperations.size("set");
+        System.out.println(size);
+
+        Set<String> set = setOperations.members("set");
+        System.out.println(set);
+
+        Long add2 = setOperations.add("set1", "a", "c", "d", "c");
+        Set<String> union = setOperations.union("set", "set1");
+        Set<String> difference = setOperations.difference("set1", "set");
+
+        System.out.println("union: " + union);
+        System.out.println("difference: " + difference);
     }
 
     @Test
     public void testZSet(){
         ZSetOperations<String, String> zSetOperations = redisTemplate.opsForZSet();
+        zSetOperations.add("zset", "1", 1.0);
+        zSetOperations.add("zset", "2", 2.0);
+        Boolean b = zSetOperations.add("zset", "3", 3.0);
+        Boolean b1 = zSetOperations.add("zset", "3", 3.0);
+        zSetOperations.add("zset", "4", 0);
+        Long size = zSetOperations.size("zset");
+        System.out.println(b);
+        System.out.println(b1);
+        System.out.println(size);
+
+        Set<String> zset = zSetOperations.range("zset", 0, -1);
+        System.out.println(zset);
 
     }
 
