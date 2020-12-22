@@ -1,1 +1,133 @@
-<mxfile host="app.diagrams.net" modified="2020-12-22T09:27:57.537Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15" version="14.1.1" etag="Tzh416TfnKuRlGYnefTE" type="github"><diagram id="ki_LA9mQ505LY44z_Rbz">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2020-12-22T12:19:52.959Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15" etag="bvsdDNuDEpcCElnLr_ay" version="14.1.1" type="github">
+  <diagram id="ki_LA9mQ505LY44z_Rbz" name="Page-1">
+    <mxGraphModel dx="1188" dy="683" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-2" value="" style="endArrow=classic;html=1;strokeWidth=3;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="130" y="360" as="sourcePoint" />
+            <mxPoint x="920" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-4" value="进程A" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="170" y="420" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-7" value="" style="endArrow=classic;html=1;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry x="-0.04" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="170" y="414" as="sourcePoint" />
+            <mxPoint x="170" y="364" as="targetPoint" />
+            <Array as="points" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-12" value="" style="endArrow=classic;html=1;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="364" as="sourcePoint" />
+            <mxPoint x="200" y="414" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-13" value="加锁成功" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rotation=90;fontSize=10;horizontal=1;" vertex="1" connectable="0" parent="rkzl5wiAowMu2SlgCzTU-12">
+          <mxGeometry x="-0.12" y="-4" relative="1" as="geometry">
+            <mxPoint x="14" y="4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-14" value="加锁" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="160" y="380" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-15" value="" style="endArrow=none;html=1;strokeWidth=3;fontSize=10;rounded=0;strokeColor=#FF3333;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="360" as="sourcePoint" />
+            <mxPoint x="510" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-47" value="进程A 持有锁" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" vertex="1" connectable="0" parent="rkzl5wiAowMu2SlgCzTU-15">
+          <mxGeometry x="-0.1256" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-16" value="进程B" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="340" y="210" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-17" value="" style="endArrow=classic;html=1;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry x="-0.04" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="370" y="350" as="sourcePoint" />
+            <mxPoint x="370" y="300" as="targetPoint" />
+            <Array as="points" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-18" value="" style="endArrow=classic;html=1;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="344.17" y="301" as="sourcePoint" />
+            <mxPoint x="344.17" y="351" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-19" value="加锁失败" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rotation=90;fontSize=10;horizontal=1;" vertex="1" connectable="0" parent="rkzl5wiAowMu2SlgCzTU-18">
+          <mxGeometry x="-0.12" y="-4" relative="1" as="geometry">
+            <mxPoint x="39.83" y="3.33" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-20" value="加锁" style="text;html=1;strokeColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;rotation=90;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="335" y="316" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-33" value="进程C" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="650" y="420" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-34" value="" style="endArrow=classic;html=1;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry x="-0.04" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="650" y="414" as="sourcePoint" />
+            <mxPoint x="650" y="364" as="targetPoint" />
+            <Array as="points" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-35" value="" style="endArrow=classic;html=1;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="680" y="364" as="sourcePoint" />
+            <mxPoint x="680" y="414" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-36" value="加锁成功" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rotation=90;fontSize=10;horizontal=1;" vertex="1" connectable="0" parent="rkzl5wiAowMu2SlgCzTU-35">
+          <mxGeometry x="-0.12" y="-4" relative="1" as="geometry">
+            <mxPoint x="14" y="4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-37" value="加锁" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="640" y="380" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-48" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;strokeWidth=1;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="450" as="sourcePoint" />
+            <mxPoint x="510" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-49" value="解锁" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="380" y="430" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-50" value="" style="endArrow=none;html=1;strokeWidth=3;fontSize=10;rounded=0;strokeColor=#FF3333;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="680" y="360" as="sourcePoint" />
+            <mxPoint x="810" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-51" value="进程C 持有锁" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" vertex="1" connectable="0" parent="rkzl5wiAowMu2SlgCzTU-50">
+          <mxGeometry x="-0.1256" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-53" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;strokeColor=#000000;strokeWidth=1;fontSize=10;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="680" y="450" as="sourcePoint" />
+            <mxPoint x="810" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-55" value="解锁" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" vertex="1" connectable="0" parent="rkzl5wiAowMu2SlgCzTU-53">
+          <mxGeometry x="-0.1794" y="1" relative="1" as="geometry">
+            <mxPoint y="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
