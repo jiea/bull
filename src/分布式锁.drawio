@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-12-22T12:30:27.279Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15" etag="faHQYgfqH-CGQJR4je12" version="14.1.1" type="github">
+<mxfile host="app.diagrams.net" modified="2020-12-22T12:32:28.161Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15" etag="sDQo4zpx8JadjjcD7WYi" version="14.1.1" type="github">
   <diagram id="ki_LA9mQ505LY44z_Rbz" name="Page-1">
     <mxGraphModel dx="1188" dy="683" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#FCF5DE" math="0" shadow="0">
       <root>
@@ -10,7 +10,7 @@
             <mxPoint x="920" y="360" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="rkzl5wiAowMu2SlgCzTU-4" value="进程A" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-4" value="进程A" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="170" y="420" width="30" height="60" as="geometry" />
         </mxCell>
         <mxCell id="rkzl5wiAowMu2SlgCzTU-7" value="" style="endArrow=classic;html=1;strokeWidth=1;" edge="1" parent="1">
@@ -46,7 +46,7 @@
             <mxPoint x="14.17" y="10" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="rkzl5wiAowMu2SlgCzTU-16" value="进程B" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+        <mxCell id="rkzl5wiAowMu2SlgCzTU-16" value="进程B" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="340" y="210" width="30" height="60" as="geometry" />
         </mxCell>
         <mxCell id="rkzl5wiAowMu2SlgCzTU-17" value="" style="endArrow=classic;html=1;strokeWidth=1;" edge="1" parent="1">
